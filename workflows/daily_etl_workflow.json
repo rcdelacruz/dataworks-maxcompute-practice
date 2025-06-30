@@ -1,0 +1,187 @@
+{
+  "workflow": {
+    "name": "Daily_ETL_Workflow",
+    "description": "Daily ETL process for sales data processing and quality checks",
+    "version": "1.0",
+    "schedule": {
+      "type": "daily",
+      "time": "02:00",
+      "timezone": "UTC+8"
+    },
+    "parameters": {
+      "bizdate": "${bizdate}",
+      "project_name": "${project_name}",
+      "cluster_name": "${cluster_name}"
+    },
+    "nodes": [
+      {
+        "id": "data_quality_check",
+        "name": "Data Quality Validation",
+        "type": "ODPS_SQL",
+        "description": "Run data quality checks on source tables",
+        "sql_file": "sql/06_data_quality.sql",
+        "parameters": {
+          "bizdate": "${bizdate}"
+        },
+        "timeout": 1800,
+        "retry_count": 2,
+        "dependencies": []
+      },
+      {
+        "id": "customer_segmentation",
+        "name": "Customer Segmentation Analysis",
+        "type": "ODPS_SQL",
+        "description": "Update customer segments based on latest data",
+        "sql_content": "INSERT OVERWRITE TABLE customer_segments PARTITION (ds = '${bizdate}') SELECT * FROM (...)",
+        "parameters": {
+          "bizdate": "${bizdate}"
+        },
+        "timeout": 3600,
+        "retry_count": 1,
+        "dependencies": ["data_quality_check"]
+      },
+      {
+        "id": "product_performance",
+        "name": "Product Performance Analysis",
+        "type": "ODPS_SQL",
+        "description": "Calculate product performance metrics",
+        "sql_file": "sql/05_etl_workflows.sql",
+        "sql_section": "product_performance",
+        "parameters": {
+          "bizdate": "${bizdate}"
+        },
+        "timeout": 2400,
+        "retry_count": 1,
+        "dependencies": ["data_quality_check"]
+      },
+      {
+        "id": "daily_sales_summary",
+        "name": "Daily Sales Summary",
+        "type": "ODPS_SQL",
+        "description": "Generate daily sales summary reports",
+        "sql_file": "sql/05_etl_workflows.sql",
+        "sql_section": "daily_sales_summary",
+        "parameters": {
+          "bizdate": "${bizdate}"
+        },
+        "timeout": 1800,
+        "retry_count": 1,
+        "dependencies": ["customer_segmentation", "product_performance"]
+      },
+      {
+        "id": "web_analytics_summary",
+        "name": "Web Analytics Processing",
+        "type": "ODPS_SQL",
+        "description": "Process web analytics data and generate insights",
+        "sql_file": "sql/05_etl_workflows.sql",
+        "sql_section": "web_analytics_summary",
+        "parameters": {
+          "bizdate": "${bizdate}"
+        },
+        "timeout": 2400,
+        "retry_count": 1,
+        "dependencies": ["data_quality_check"]
+      },
+      {
+        "id": "data_validation",
+        "name": "Final Data Validation",
+        "type": "ODPS_SQL",
+        "description": "Validate processed data and generate quality report",
+        "sql_content": "INSERT INTO dq_daily_report PARTITION (ds = '${bizdate}') SELECT * FROM (...)",
+        "parameters": {
+          "bizdate": "${bizdate}"
+        },
+        "timeout": 900,
+        "retry_count": 1,
+        "dependencies": ["daily_sales_summary", "web_analytics_summary"]
+      },
+      {
+        "id": "send_notifications",
+        "name": "Send Success Notifications",
+        "type": "SHELL",
+        "description": "Send email notifications about ETL completion",
+        "command": "python /opt/scripts/send_notification.py --type=success --date=${bizdate}",
+        "timeout": 300,
+        "retry_count": 1,
+        "dependencies": ["data_validation"]
+      }
+    ],
+    "error_handling": {
+      "on_failure": {
+        "action": "send_alert",
+        "notification": {
+          "type": "email",
+          "recipients": ["data-team@company.com"],
+          "subject": "Daily ETL Workflow Failed - ${bizdate}",
+          "template": "etl_failure_template"
+        }
+      },
+      "retry_policy": {
+        "max_retries": 2,
+        "retry_interval": 300
+      }
+    },
+    "monitoring": {
+      "sla": {
+        "expected_duration": 7200,
+        "warning_threshold": 5400,
+        "critical_threshold": 9000
+      },
+      "alerts": [
+        {
+          "condition": "duration > warning_threshold",
+          "action": "send_warning",
+          "message": "ETL workflow is taking longer than expected"
+        },
+        {
+          "condition": "any_node_failed",
+          "action": "send_critical_alert",
+          "message": "ETL workflow has failed nodes"
+        }
+      ]
+    },
+    "resource_management": {
+      "memory": "4GB",
+      "cpu": "2 cores",
+      "priority": "high",
+      "queue": "production"
+    }
+  },
+  "deployment": {
+    "environment": "production",
+    "deployed_by": "dataworks_admin",
+    "deployment_date": "2024-01-15",
+    "version_history": [
+      {
+        "version": "1.0",
+        "date": "2024-01-15",
+        "changes": "Initial workflow creation",
+        "author": "data_team"
+      }
+    ]
+  },
+  "documentation": {
+    "purpose": "This workflow processes daily sales and customer data, performs quality checks, and generates business intelligence reports.",
+    "data_sources": [
+      "customers",
+      "orders", 
+      "order_items",
+      "products",
+      "web_sessions",
+      "page_views"
+    ],
+    "outputs": [
+      "daily_sales_summary",
+      "customer_segments", 
+      "product_performance",
+      "web_analytics_summary",
+      "dq_daily_report"
+    ],
+    "business_impact": "Enables daily business intelligence reporting and data-driven decision making",
+    "maintenance": {
+      "review_frequency": "monthly",
+      "owner": "data_team",
+      "contacts": ["data-lead@company.com"]
+    }
+  }
+}
