@@ -1,0 +1,31 @@
+page_view_id,session_id,user_id,page_url,page_title,timestamp,time_on_page_seconds,referrer_url,exit_page
+PV001,SES001,USR001,/home,Home Page,2024-01-15 09:30:00,120,https://google.com,false
+PV002,SES001,USR001,/products,Products,2024-01-15 09:32:00,180,/home,false
+PV003,SES001,USR001,/products/wireless-headphones,Wireless Headphones,2024-01-15 09:35:00,240,/products,false
+PV004,SES001,USR001,/cart,Shopping Cart,2024-01-15 09:39:00,60,/products/wireless-headphones,false
+PV005,SES001,USR001,/checkout,Checkout,2024-01-15 09:40:00,300,/cart,false
+PV006,SES001,USR001,/order-confirmation,Order Confirmation,2024-01-15 09:45:00,30,/checkout,true
+PV007,SES002,USR002,/home,Home Page,2024-01-15 10:15:20,90,direct,false
+PV008,SES002,USR002,/products/running-shoes,Running Shoes,2024-01-15 10:16:50,200,/home,false
+PV009,SES002,USR002,/products/running-shoes,Running Shoes,2024-01-15 10:20:10,155,/products/running-shoes,true
+PV010,SES003,USR003,/home,Home Page,2024-01-15 11:00:10,45,https://facebook.com,false
+PV011,SES003,USR003,/about,About Us,2024-01-15 11:00:55,180,/home,false
+PV012,SES003,USR003,/products,Products,2024-01-15 11:03:55,300,/about,false
+PV013,SES003,USR003,/products/coffee-maker,Coffee Maker,2024-01-15 11:08:55,420,/products,false
+PV014,SES003,USR003,/reviews,Customer Reviews,2024-01-15 11:15:55,240,/products/coffee-maker,false
+PV015,SES003,USR003,/contact,Contact Us,2024-01-15 11:19:55,180,/reviews,false
+PV016,SES003,USR003,/cart,Shopping Cart,2024-01-15 11:22:55,90,/contact,false
+PV017,SES003,USR003,/checkout,Checkout,2024-01-15 11:24:25,70,/cart,true
+PV018,SES004,USR004,/home,Home Page,2024-01-15 14:20:00,150,email,false
+PV019,SES004,USR004,/blog,Blog,2024-01-15 14:22:30,300,/home,false
+PV020,SES004,USR004,/blog/tech-trends,Tech Trends Article,2024-01-15 14:27:30,180,/blog,false
+PV021,SES004,USR004,/products,Products,2024-01-15 14:30:30,90,/blog/tech-trends,false
+PV022,SES004,USR004,/products/smartphone-case,Smartphone Case,2024-01-15 14:31:60,75,/products,true
+PV023,SES005,USR005,/home,Home Page,2024-01-15 16:45:30,60,https://google.com,false
+PV024,SES005,USR005,/search?q=yoga,Search Results,2024-01-15 16:46:30,120,/home,false
+PV025,SES005,USR005,/products/yoga-mat,Yoga Mat,2024-01-15 16:48:30,360,/search?q=yoga,false
+PV026,SES005,USR005,/products/desk-lamp,Desk Lamp,2024-01-15 16:54:30,180,/products/yoga-mat,false
+PV027,SES005,USR005,/products/bluetooth-speaker,Bluetooth Speaker,2024-01-15 16:57:30,240,/products/desk-lamp,false
+PV028,SES005,USR005,/compare,Product Comparison,2024-01-15 17:01:30,300,/products/bluetooth-speaker,false
+PV029,SES005,USR005,/cart,Shopping Cart,2024-01-15 17:06:30,180,/compare,false
+PV030,SES005,USR005,/checkout,Checkout,2024-01-15 17:09:30,150,/cart,true
