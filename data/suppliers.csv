@@ -1,0 +1,10 @@
+supplier_id,supplier_name,contact_name,email,phone,address,city,country,rating,established_year
+SUP001,TechBrand Solutions,John Anderson,john@techbrand.com,+1-555-1001,123 Tech Street,San Francisco,USA,4.8,2015
+SUP002,SportMax Industries,Sarah Chen,sarah@sportmax.com,+86-21-5555-2002,456 Sports Avenue,Shanghai,China,4.6,2012
+SUP003,HomeEssentials Corp,Michael Rodriguez,mike@homeessentials.com,+1-555-3003,789 Home Boulevard,Chicago,USA,4.7,2010
+SUP004,FitLife Manufacturing,Emma Johnson,emma@fitlife.com,+44-20-7555-4004,321 Fitness Lane,London,UK,4.5,2018
+SUP005,ModernLiving Ltd,David Kim,david@modernliving.com,+82-2-555-5005,654 Design Street,Seoul,South Korea,4.9,2020
+SUP006,SoundWave Electronics,Lisa Wang,lisa@soundwave.com,+49-30-555-6006,987 Audio Road,Berlin,Germany,4.4,2016
+SUP007,OutdoorGear Co,Robert Thompson,robert@outdoorgear.com,+1-604-555-7007,147 Mountain View,Vancouver,Canada,4.3,2014
+SUP008,GameTech Peripherals,Jennifer Liu,jen@gametech.com,+886-2-555-8008,258 Gaming Plaza,Taipei,Taiwan,4.7,2019
+SUP009,HydroMax Solutions,Carlos Martinez,carlos@hydromax.com,+52-55-555-9009,369 Water Way,Mexico City,Mexico,4.2,2017
