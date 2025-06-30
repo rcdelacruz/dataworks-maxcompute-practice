@@ -1,0 +1,31 @@
+event_id,session_id,user_id,event_type,event_timestamp,page_url,element_id,element_type,event_data
+EVT001,SES001,USR001,click,2024-01-15 09:32:00,/products,btn-filter-electronics,button,category:electronics
+EVT002,SES001,USR001,scroll,2024-01-15 09:32:15,/products,,page,depth:50%
+EVT003,SES001,USR001,click,2024-01-15 09:35:00,/products,prod-001-link,link,product_id:PROD001
+EVT004,SES001,USR001,hover,2024-01-15 09:35:30,/products/wireless-headphones,img-product-gallery,image,image_index:2
+EVT005,SES001,USR001,click,2024-01-15 09:39:00,/products/wireless-headphones,btn-add-to-cart,button,quantity:1
+EVT006,SES001,USR001,form_fill,2024-01-15 09:40:30,/checkout,input-email,input,field:email
+EVT007,SES001,USR001,form_fill,2024-01-15 09:41:00,/checkout,input-address,input,field:shipping_address
+EVT008,SES001,USR001,click,2024-01-15 09:44:00,/checkout,btn-place-order,button,payment_method:credit_card
+EVT009,SES002,USR002,search,2024-01-15 10:16:00,/home,search-box,input,query:running shoes
+EVT010,SES002,USR002,click,2024-01-15 10:16:50,/home,search-result-1,link,product_id:PROD002
+EVT011,SES002,USR002,zoom,2024-01-15 10:18:00,/products/running-shoes,img-product-main,image,zoom_level:200%
+EVT012,SES002,USR002,scroll,2024-01-15 10:19:00,/products/running-shoes,,page,depth:75%
+EVT013,SES003,USR003,click,2024-01-15 11:01:00,/home,nav-about,link,section:about
+EVT014,SES003,USR003,video_play,2024-01-15 11:02:00,/about,video-company-story,video,duration:120s
+EVT015,SES003,USR003,click,2024-01-15 11:04:00,/about,btn-view-products,button,category:all
+EVT016,SES003,USR003,filter,2024-01-15 11:09:00,/products,filter-category,dropdown,value:home
+EVT017,SES003,USR003,sort,2024-01-15 11:09:30,/products,sort-price,dropdown,value:price_asc
+EVT018,SES003,USR003,click,2024-01-15 11:08:55,/products,prod-003-link,link,product_id:PROD003
+EVT019,SES003,USR003,rating,2024-01-15 11:16:00,/reviews,star-rating,rating,value:5
+EVT020,SES003,USR003,form_fill,2024-01-15 11:20:00,/contact,textarea-message,textarea,subject:product_inquiry
+EVT021,SES004,USR004,newsletter,2024-01-15 14:22:00,/home,newsletter-signup,form,email:user@email.com
+EVT022,SES004,USR004,social_share,2024-01-15 14:28:00,/blog/tech-trends,btn-share-twitter,button,platform:twitter
+EVT023,SES004,USR004,download,2024-01-15 14:29:00,/blog/tech-trends,link-download-pdf,link,file:tech-trends-2024.pdf
+EVT024,SES004,USR004,bookmark,2024-01-15 14:30:00,/blog/tech-trends,btn-bookmark,button,action:add
+EVT025,SES005,USR005,autocomplete,2024-01-15 16:46:15,/home,search-box,input,suggestion:yoga mat
+EVT026,SES005,USR005,quickview,2024-01-15 16:49:00,/search,btn-quickview-prod005,button,product_id:PROD005
+EVT027,SES005,USR005,compare_add,2024-01-15 16:55:00,/products/desk-lamp,btn-add-compare,button,product_id:PROD006
+EVT028,SES005,USR005,compare_add,2024-01-15 16:58:00,/products/bluetooth-speaker,btn-add-compare,button,product_id:PROD007
+EVT029,SES005,USR005,compare_view,2024-01-15 17:01:30,/compare,comparison-table,table,products:PROD006,PROD007
+EVT030,SES005,USR005,wishlist_add,2024-01-15 17:07:00,/cart,btn-save-for-later,button,product_id:PROD005
