@@ -1,0 +1,11 @@
+product_id,product_name,category,sub_category,brand,price,cost,supplier_id,launch_date
+PROD001,Wireless Headphones,Electronics,Audio,TechBrand,99.99,45.00,SUP001,2022-06-15
+PROD002,Running Shoes,Fashion,Footwear,SportMax,129.99,65.00,SUP002,2022-08-20
+PROD003,Coffee Maker,Home,Kitchen,HomeEssentials,79.99,35.00,SUP003,2022-05-10
+PROD004,Smartphone Case,Electronics,Accessories,TechBrand,24.99,8.00,SUP001,2022-09-05
+PROD005,Yoga Mat,Sports,Fitness,FitLife,39.99,18.00,SUP004,2022-07-12
+PROD006,Desk Lamp,Home,Office,ModernLiving,59.99,25.00,SUP005,2022-10-01
+PROD007,Bluetooth Speaker,Electronics,Audio,SoundWave,149.99,70.00,SUP006,2022-04-18
+PROD008,Winter Jacket,Fashion,Clothing,OutdoorGear,199.99,95.00,SUP007,2022-11-15
+PROD009,Gaming Mouse,Electronics,Computer,GameTech,69.99,30.00,SUP008,2022-03-22
+PROD010,Water Bottle,Sports,Accessories,HydroMax,19.99,7.00,SUP009,2022-12-08

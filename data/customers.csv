@@ -1,0 +1,11 @@
+customer_id,first_name,last_name,email,phone,registration_date,country,city,age_group
+CUST001,John,Smith,john.smith@email.com,+1-555-0101,2023-01-15,USA,New York,25-34
+CUST002,Sarah,Johnson,sarah.j@email.com,+1-555-0102,2023-01-16,USA,Los Angeles,35-44
+CUST003,Michael,Brown,m.brown@email.com,+44-20-7946-0958,2023-01-17,UK,London,25-34
+CUST004,Emma,Davis,emma.davis@email.com,+1-555-0104,2023-01-18,USA,Chicago,18-24
+CUST005,James,Wilson,james.w@email.com,+61-2-9374-4000,2023-01-19,Australia,Sydney,45-54
+CUST006,Lisa,Anderson,lisa.anderson@email.com,+1-555-0106,2023-01-20,USA,Houston,35-44
+CUST007,David,Taylor,d.taylor@email.com,+44-161-496-0000,2023-01-21,UK,Manchester,25-34
+CUST008,Jennifer,Moore,jen.moore@email.com,+1-555-0108,2023-01-22,USA,Phoenix,35-44
+CUST009,Robert,Jackson,r.jackson@email.com,+1-514-555-0109,2023-01-23,Canada,Montreal,45-54
+CUST010,Maria,Garcia,maria.garcia@email.com,+34-91-374-85-00,2023-01-24,Spain,Madrid,25-34
